@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name='my_world'>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-17 -15 13 -0 0.55 0.72</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+    <include><uri>model://ground_plane</uri></include>
+
+    <include>
+      <uri>model://bookshelf</uri>
+      <pose>3.5 2.2 0 0 0 1.5707</pose>
+    </include>
+
+    <include><uri>model://my_building</uri></include>
+
+    <include>
+      <uri>model://my_bot</uri>
+      <name>my_bot_1</name>
+      <pose>-2 1.5 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://my_bot</uri>
+      <name>my_bot_2</name>
+      <pose>2 -1.5 0 0 0 1.5707</pose>
+    </include>
+
+    <include>
+      <uri>model://my_ball</uri>
+      <pose>-6.02926 2.53512 0.1 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
